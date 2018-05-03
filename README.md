@@ -1,0 +1,1 @@
+# vim-boring-javascript
