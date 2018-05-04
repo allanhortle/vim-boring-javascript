@@ -11,6 +11,21 @@ syn keyword Keyword async arguments break case catch class const continue debugg
 syn keyword Keyword type declare interface
 
 
+"
+" Constants
+"
+
+syn keyword Constant true false null Infinity NaN undefined
+
+" Numbers
+syn match Constant '\<[0-9]\+\(\.[0-9]\+\)\?'
+syn match Constant '\<0b[0-1]*'
+syn match Constant '\<0o[0-7]*'
+syn match Constant '\<0x[0-9a-fA-F]*'
+syn match Constant '\.[0-9]\+'
+syn match Constant 'e[-+]\?[0-9]\+'
+
+
 " Strings
 syn region String start='\'' end='\''
 syn region String start='"' end='"'
