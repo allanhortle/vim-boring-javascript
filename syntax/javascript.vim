@@ -46,7 +46,7 @@ syntax match jsBoringRegex '\v\/{-1,}\/[gimyus]?'
 
 " Types
 "syntax match Type "\(:\)\@<=\s*\([a-zA-Z_.]\+\)\(<[a-zA-Z_, \*]*>\)" "Generics
-syntax region typeDeclaration matchGroup=Type start='\vtype.*\=\s\{' end='};' contains=typeDeclarationKeyword
+syntax region typeDeclaration matchGroup=Type start='\v^type.*\=\s\{' end='};' contains=typeDeclarationKeyword
 syntax region typeObjectNesting matchGroup=Type contained start='{' end='}' contains=typeCharacters,typeObjectNesting
 
 syntax match typeCharacters contained "[a-zA-Z*?]"
@@ -57,7 +57,6 @@ hi def link typeDeclaration Type
 hi def link typeGenerics Type
 
 " JSX
-
 syntax region jsxTagStart matchGroup=Meta start='<[_$a-zA-Z]*\w' end='>' contains=jsxTagStart,jsxExpression,@jsxTag
 syntax match Meta '</[_$a-zA-Z]*>' 
 syntax region jsxExpression matchGroup=Meta contained start='{' end='}' contains=@jsAll,jsxTagStart,jsxExpression
